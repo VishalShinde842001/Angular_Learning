@@ -1,0 +1,38 @@
+Here i am going to write notes of routing
+1)Simply for routing simply there is file name with app.route.ts go there and put route for which route you want which
+component
+for eg {path:"login",component:LoginComponent}
+Above statement simply means as i give route like /login then simply redirect to LoginComponent
+2)We can use routing with below three ways also
+===============================================================================
+<button (click)="route('completeRouting')">Complete Routing Page</button>
+<a href="completeRouting">Complete Routing Page</a>
+<a routerLink='/completeRouting'>Complete Routing Page</a>
+<router-outlet></router-outlet>
+
+route(route: string) {
+this.router.navigate([route]);
+}
+===============================================================================
+3)404Page
+=>Consider someone is on our site and trying to access page with improper route then we simply need to redirect the
+404Not Found page
+=>{path:"**",component:404NotFoundComponent}
+==>Given route is wild card route "**" simply means if there is no url present then simply wild card will trigger that component which is associated with it
+===============================================================================
+4)Lets talk about child route
+=>We can make child routes also simply like 
+{
+    path:"about",children:[
+        {path:"us",component:AboutUsComponent},
+        {path:"company",component:AboutCompanyComponent}
+    ]
+    ,component:AboutComponent
+}
+===============================================================================
+Tips=>
+1>To use <router-outlet></router-outlet> you need to import RouterModule in that component
+2>routerLink can be used in two way routerLink="/userDetails"  and for dynamic case [routerLink]="['/userDetails']"
+3)routerLinkActive="active" simply used to apply the active tab
+4)[routerLinkActiveOptions]={exact:true} this will simply check the complete route and if matches exactly then only show selected
+5)To Apply routeLinkActive we simply need to import tha RouteLink and RouterModule otherwise it will not work
