@@ -1,6 +1,7 @@
 
-<button (click)="route('completeRouting')">Complete Routing Page</button>
-<a href="completeRouting">Complete Routing Page</a>
-<a routerLink='/completeRouting'>Complete Routing Page</a>
-<button (click)="route('about')">About Page</button>
+<button (click)="route('completeRouting')" routerLinkActive="active">Complete Routing Page</button>
+<a href="completeRouting" routerLinkActive="active">Complete Routing Page</a>
+<a routerLink='/completeRouting' routerLinkActive="active">Complete Routing Page</a>
+<button (click)="route('about')" routerLinkActive="active">About Page</button>
+
 <router-outlet></router-outlet>

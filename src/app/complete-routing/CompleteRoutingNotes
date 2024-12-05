@@ -36,3 +36,4 @@ Tips=>
 3)routerLinkActive="active" simply used to apply the active tab
 4)[routerLinkActiveOptions]={exact:true} this will simply check the complete route and if matches exactly then only show selected
 5)To Apply routeLinkActive we simply need to import tha RouteLink and RouterModule otherwise it will not work
+6)routerLinkActive="active" will only work when for routing we used routerLink
