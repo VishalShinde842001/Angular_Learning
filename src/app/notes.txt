@@ -1,0 +1,168 @@
+Certainly! Let's break down the concept of content projection in Angular using `ng-content` and how you can use it to pass different content (like headers and footers) to a child component (`product-list` in this case).
+
+### Scenario:
+You have a main component that needs to display multiple product lists, each with a different heading and possibly other content like footers. Instead of creating multiple components or hardcoding the content, you can use Angular's content projection to pass the content dynamically.
+
+### Main Component (Parent Component)
+In your main component, you want to use the `product-list` component multiple times, each time passing different content for the header and footer.
+
+```html
+<!-- main.component.html -->
+<product-list>
+  <div slot="header">This is the first header</div>
+  <div slot="footer">This is the first footer</div>
+</product-list>
+
+<product-list>
+  <div slot="header">This is the second header</div>
+  <div slot="footer">This is the second footer</div>
+</product-list>
+```
+
+### Product List Component (Child Component)
+In the `product-list` component, you will use `ng-content` to project the content passed from the parent component.
+
+```html
+<!-- product-list.component.html -->
+<div class="product-list">
+  <!-- Project the header content -->
+  <ng-content select="[slot='header']"></ng-content>
+
+  <!-- Your product list content goes here -->
+  <ul>
+    <li>Product 1</li>
+    <li>Product 2</li>
+    <li>Product 3</li>
+  </ul>
+
+  <!-- Project the footer content -->
+  <ng-content select="[slot='footer']"></ng-content>
+</div>
+```
+
+### Explanation:
+1. **Content Projection (`ng-content`)**:
+   - The `ng-content` element is a placeholder that Angular uses to insert the projected content.
+   - The `select` attribute in `ng-content` is used to specify which content should be projected. In this case, it selects content based on the `slot` attribute.
+
+2. **Slots**:
+   - In the parent component, you define different slots (`header` and `footer`) using the `slot` attribute.
+   - These slots are then projected into the corresponding `ng-content` placeholders in the child component.
+
+3. **Reusability**:
+   - By using content projection, you can reuse the `product-list` component multiple times with different headers and footers without modifying the child component itself.
+
+### Final Output:
+When the application runs, the `product-list` component will render the product list along with the projected header and footer content.
+
+```html
+<!-- Rendered output for the first product-list -->
+<div class="product-list">
+  <div slot="header">This is the first header</div>
+  <ul>
+    <li>Product 1</li>
+    <li>Product 2</li>
+    <li>Product 3</li>
+  </ul>
+  <div slot="footer">This is the first footer</div>
+</div>
+
+<!-- Rendered output for the second product-list -->
+<div class="product-list">
+  <div slot="header">This is the second header</div>
+  <ul>
+    <li>Product 1</li>
+    <li>Product 2</li>
+    <li>Product 3</li>
+  </ul>
+  <div slot="footer">This is the second footer</div>
+</div>
+```
+
+### Summary:
+- **Content Projection** allows you to pass content from a parent component to a child component.
+- **`ng-content`** is used in the child component to project the passed content.
+- **Slots** can be used to differentiate between different types of content (e.g., headers, footers).
+- This approach makes your components more reusable and flexible.
+
+This pattern is particularly useful when you want to create reusable components that can be customized with different content without modifying the component's internal structure.
+
+
+=================================================================================================================
+
+All Lifecylce hooks
+1)ngOnChanges 
+2)ngOnInit()
+3)ngDoCheck()
+4)ngAfterContentInit
+5)ngAfterContentChecked
+6)ngAfterViewInit
+7)ngAfterViewChecked
+8)ngOnDestroy
+
+=>As component used or loaded in any component then simply object of that will created
+=>Then first consturctor will runs and then all next things will happen 
+=>consturctor is not lifecycle hook or feature of angular it is just feature of typescript
+=>From consturctor you cant access updated values of @Input, @ViewChild, @ViewChildren, @ContentChild, @ContentChildren
+=>After consturctor ngOnChanges will call 
+=>Before ngOnChages raise all values of @Input decorator will updated so you can access all updated values of @Input fields 
+=>ngOnChanges will run for every change detection in @Input 
+=>ngOnChanges takes one paramter names as SimpleChanges which have all information about previous state current state
+=>After ngOnChages ngOnInit hook reaise 
+=>ngOnInit triggers only once when first change detection runs
+=>To use ngOnChages you can simply implements OnChages interface in corresponding class and for ngOnInit you can simply implement OnInit interface
+=>After ngOnInit ngDocheck hook will trigger after first changes detection 
+=>And then for every event occurs of change detection runs then ngDoCheck will trigger
+=>ngAfterContentInit()=>This hook will raise after ngDoCheck after first change detection , It will run only once.Before this hook ng-content and ContentChild and ContentChildren is updated 
+=>ngAfterContentChecked()=>This hook will trigger every time when there is change detection in ContentChild or ContentChildren
+=>ngAfterViewInit()=>This will trigger only once and it will trigger after ngAfterContentChecked ,Before this event trigger all values of ViewChild and ViewChildren are updated ,here we can access updated values of 
+=>ViewChild and ViewChildren
+=>ngAfterViewChecked =>This will trigger every time when there is change detction in ViewChild or ViewChidren
+
+ngDoCheck:
+
+This hook is triggered every time Angular's change detection runs, regardless of whether there are actual changes or not.
+
+It allows you to implement custom change detection logic.
+
+Note: This hook runs frequently, so avoid heavy computations here to prevent performance issues.
+
+ngAfterContentInit:
+
+This hook is triggered once, after the first change detection cycle that involves content projection (ng-content).
+
+It runs after Angular has projected external content (passed from the parent component via ng-content) into the child component.
+
+At this point, ContentChild and ContentChildren queries are updated and can be accessed.
+
+Key Point: This hook runs only once, after the initial content projection.
+
+ngAfterContentChecked:
+
+This hook is triggered after every change detection cycle that involves content projection (ng-content).
+
+It runs after Angular has checked the content projected into the child component.
+
+If there are changes in the content (e.g., updates to ContentChild or ContentChildren), this hook will be triggered.
+
+Key Point: This hook runs frequently, after every change detection cycle involving content.
+
+ngAfterViewInit:
+
+This hook is triggered once, after Angular has fully initialized the component's view (including child views).
+
+It runs after ngAfterContentChecked and after the view (including ViewChild and ViewChildren) has been fully initialized.
+
+At this point, you can safely access and manipulate the DOM elements or values of ViewChild and ViewChildren.
+
+Key Point: This hook runs only once, after the view is fully initialized.
+
+ngAfterViewChecked:
+
+This hook is triggered after every change detection cycle that involves the component's view.
+
+It runs after Angular has checked the component's view and its child views.
+
+If there are changes in the view (e.g., updates to ViewChild or ViewChildren), this hook will be triggered.
+
+Key Point: This hook runs frequently, after every change detection cycle involving the view.

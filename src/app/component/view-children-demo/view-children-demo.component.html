@@ -1,0 +1,7 @@
+<form (ngSubmit)="showFullName()">
+    <input type="text" placeholder="Enter First Name" #myName>
+    <input type="text" placeholder="Enter Middle Name" #myName>
+    <input type="text" placeholder="Enter Last Name" #myName>
+    <input type="submit" value="Show Full Name">
+</form>
+<h3 *ngIf="fullName">{{fullName}}</h3>

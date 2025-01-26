@@ -1,0 +1,17 @@
+<input type="text" highlight [(ngModel)]="message" />
+<content-projection-demo-child>
+
+    <div slot="header" >
+        This is just demo header
+    </div>
+    <div slot="footer">
+        This is just demo footer
+    </div>
+    <div #temp>
+        {{message}}
+    </div>
+
+    <div #temp>
+        This is just demo
+    </div>
+</content-projection-demo-child>

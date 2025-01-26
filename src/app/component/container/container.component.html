@@ -1,0 +1,4 @@
+<h2 #viewchilddemo>View Child Demo</h2>
+<search (searchTextChanged)="passSearchToProductList($event)" #searchReference></search>
+<p *ngIf="searchKeyFromSearchComponent">Searching in search component for : {{searchKeyFromSearchComponent}}</p>
+<product-list [searchKeyFromSearchComponent]="searchKeyFromSearchComponent"></product-list>

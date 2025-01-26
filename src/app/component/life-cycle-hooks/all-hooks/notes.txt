@@ -1,0 +1,35 @@
+Life cylcle hooks contains 9 hooks
+1)ngOnChanges()
+2)ngOnInIt()
+3)ngDoCheck()
+4)ngAfterContentInIt
+5)ngAfterContentChecked
+7)ngAfterViewInIt
+8)ngAfterViewChecked
+9)ngOnDestroy
+===============================================================
+Consider you have passed something value throgh @Input decorator to any of you child and trying to access it from consturctor
+but the things is you cant access this from consturctor because when consturctor runs @Input value coming are not updated
+
+
+ngOnChages()
+=>After that ngOnChanges() lifecycle hook occurs 
+=>before this lfiecycle hook all @Input value where updated
+=>This event will trigger multiple times as you change the value of @Input passed then this value will update and 
+=>ngOnChages() lifecycle hook will execute
+=>To create this hook you need to implement OnChange interface
+=>ngOnChages() takes one paramter of type SimpleChanges and this object have info about previous state and current state so if you need previous value then also 
+=>can be accessed from their
+
+ngOnInit()
+=>This is second angular lifecycle hook runs after ngOnChages()
+=>This will run only once after first change detection
+=>In ngOnInit you can access updated values of all @Input decorated values but here you will not get updated values of 
+=>ContectChild(),ContenctChildren(),ViewChild(),ViewChildren()
+=>To implement this you can implement the OnInit interface to your class
+
+ngDoCheck()
+=>This will raise after ngOnInit()
+=>this will trigger every time when any event triggered from corresponding component
+=>Simply means at every change detection it calls
+

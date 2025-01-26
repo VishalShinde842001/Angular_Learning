@@ -1,0 +1,11 @@
+<input type="text" [(ngModel)]="message" />
+<input type="number" placeholder="Demo for view child" [(ngModel)]="num" />
+<hook-child [message]="message">
+    <p #text1>{{message}}</p>
+    <div slot="contentProjection1">
+        This is content projection 1
+    </div>
+    <div  slot="contentProjection2">
+        This is content projection 2
+    </div>
+</hook-child>

@@ -1,0 +1,23 @@
+<ng-content select="[slot='contentProjection1']"></ng-content>
+<hr>
+<ng-content select="[slot='contentProjection2']"></ng-content>
+<br>
+<hr>
+<br>
+<div *ngIf="isLoggedIn; else loginTemplate">
+    Welcome, user!
+</div>
+<ng-template #loginTemplate>
+    Please log in to continue.
+</ng-template>
+
+<hr>
+
+<div *ngIf="isLoggedIn; else loginTemplate">
+    Welcome, user!
+</div>
+
+
+<ng-template *ngIf=true>
+This is jusr demo template
+</ng-template>
