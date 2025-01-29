@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+li{
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    padding:5px;
+    cursor: pointer;
+}
+
+ul{
+    background-color: azure;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+*{
+    padding:0px;
+    margin:0px;
+}
+
+
+
+.scrollable-list {
+    height:70vh; /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    padding: 0; /* Remove default padding */
+    list-style-type: none;
+}
+
+.active-tab{
+    border-radius: 5px;
+    color: #e176b0;
+    border: 2px solid green;
+    font-weight: bold;
+}
+
+
+
+.headers {
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+
+  }
+  
+  
+  
+  
+  
+  

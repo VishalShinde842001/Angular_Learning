@@ -1,0 +1,50 @@
+[
+    {
+        "menuId": 1,
+        "menuDisplayName": "Home",
+        "menuRoute": "/home",
+        "menuIcon": "fa fa-home"
+    },
+    {
+        "menuId": 2,
+        "menuDisplayName": "Task",
+        "menuRoute": "/tasks",
+        "menuIcon": "fa fa-tasks"
+    },
+    {
+        "menuId": 3,
+        "menuDisplayName": "Calendar",
+        "menuRoute": "/calendar",
+        "menuIcon": "fa fa-calendar"
+    },
+    {
+        "menuId": 4,
+        "menuDisplayName": "Reports",
+        "menuRoute": "/reports",
+        "menuIcon": "fa fa-chart-bar"
+    },
+    {
+        "menuId": 5,
+        "menuDisplayName": "About Us",
+        "menuRoute": "/aboutus",
+        "menuIcon": "fa fa-info-circle"
+    },
+    {
+        "menuId": 6,
+        "menuDisplayName": "Help",
+        "menuRoute": "/help",
+        "menuIcon": "fa fa-question-circle"
+    },
+    {
+        "menuId": 7,
+        "menuDisplayName": "Settings",
+        "menuRoute": "/settings",
+        "menuIcon": "fa fa-cogs"
+    },
+    {
+        "menuId": 8,
+        "menuDisplayName": "Logout",
+        "menuRoute": "/logout",
+        "menuIcon": "fa fa-sign-out-alt"
+    }
+]

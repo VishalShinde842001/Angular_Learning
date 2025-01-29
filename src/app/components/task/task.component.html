@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top: 20px;">
+        <task-header header-directive ></task-header>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-xxl-3 col-xl-4 col-md-4 col-sm-4">
+            <!-- <input type="text" placeholder="Search Task" /> -->
+            <task-list (selectTask)="getSelectedTask($event)"></task-list>
+        </div>
+        <div class="col-xxl-9 col-xl-8 col-md-8 col-sm-8">
+            <task-details [selectedTask]="selectedTask"></task-details>
+        </div>
+    </div>
+</div>

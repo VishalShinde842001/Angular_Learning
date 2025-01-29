@@ -1,0 +1,8 @@
+
+
+
+
+.list-element {
+    padding: 8px; /* Add padding to list items */
+    border-bottom: 1px solid #eee; /* Optional: Add a separator between items */
+}

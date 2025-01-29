@@ -1,0 +1,36 @@
+<div  class="container-fluid p-4 scrollable-list" dynamic-height  style="background-color: lightblue;">
+    <div *ngIf="selectedTask" class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">Task Details</h5>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4 col-md-3 fw-bold">Task ID:</div>
+                <div class="col-12 col-sm-8 col-md-9">{{ selectedTask.taskId }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4 col-md-3 fw-bold">Task Name:</div>
+                <div class="col-12 col-sm-8 col-md-9">{{ selectedTask.taskName }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4 col-md-3 fw-bold">Description:</div>
+                <div class="col-12 col-sm-8 col-md-9">{{ selectedTask.taskDescription }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4 col-md-3 fw-bold">Status:</div>
+                <div class="col-12 col-sm-8 col-md-9">{{ selectedTask.taskStatus }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4 col-md-3 fw-bold">Start Date:</div>
+                <div class="col-12 col-sm-8 col-md-9">{{ selectedTask.taskStartDate }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4 col-md-3 fw-bold">End Date:</div>
+                <div class="col-12 col-sm-8 col-md-9">{{ selectedTask.taskEndDate }}</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!selectedTask" class="text-center">
+        <p>No task selected.</p>
+    </div>
+</div>

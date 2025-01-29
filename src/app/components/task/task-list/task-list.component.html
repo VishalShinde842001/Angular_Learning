@@ -1,0 +1,9 @@
+
+<ul class="list-group list scrollable-list" dynamic-height>
+    <li *ngFor="let task of taskList" class="list-group-item d-flex flex-column" (click)="onTaskSelect(task)">
+        <div class="d-flex justify-content-between w-100">
+            <span>{{task.taskId}} - {{task.taskName}}</span>
+        </div>
+        <small class="text-muted align-self-end">{{task.taskStatus}}</small>
+    </li>
+</ul>
