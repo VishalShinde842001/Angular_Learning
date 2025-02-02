@@ -1,0 +1,12 @@
+<input type="text" (input)="changeTitle($event)" placeholder="Demo for Event Binding" />
+
+<p *ngIf="title">My Title is : {{title}}</p>
+
+
+<br><br>
+
+<input type="text" [value]="title" placeholder="Demo for property binding" />
+
+
+
+<p>{{title}}</p>

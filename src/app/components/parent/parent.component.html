@@ -1,0 +1,5 @@
+<h2>Data Coming From Child : {{dataFromChild}}</h2>
+<input class="input-field" type="text" placeholder="Pass Data From Parent to Child" [(ngModel)]="dataFromParent"/>
+
+<hr>
+<child-component (eventToPassDataToParent)="getDataFromChild($event)" [dataFromParentThroughInput]="dataFromParent"></child-component>

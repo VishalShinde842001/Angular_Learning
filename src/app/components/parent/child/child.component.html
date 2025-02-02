@@ -1,0 +1,4 @@
+<h2>Data Coming From Parent : {{dataFromParentThroughInput}}</h2>
+<br>
+<input class="input-field"  type="text" placeholder="Pass Data From Child To Parent" (input)="whenDataFromChildToParentThroughOutputChanges()" [(ngModel)]="dataFromChildToParentThroughOutput"  >
+<h4>Click Here To Trigger Info :{{dataFromChildToParentThroughOutput}}</h4>

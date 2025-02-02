@@ -1,0 +1,11 @@
+1)What is Angular ?
+=>Angular is Javascript framework used to create dynamic client side application using HTML ,css and js or ts
+=>framework simply means tool which provide us predefiend class and interface to do do to which most of the time we not need to implement lot of things from scratch
+=>for example in Angular when you create component so with component creation with Angular CLI  it will simply create HTML,CSS,TS or JS file and that are connected 
+=>so this is feature of framework so here we dont need to manage in manually
+=>Angular is used to create highly scalable 'Single Page Application' 
+=>Single page application simply means in angular their is only one page index.html is load on browser and never another page will load as we simply only change the content of that page dynamically
+=>And above things is handled by Javascript dynamically
+=>Angular application works much faster because there is no need to call server for new page every time 
+=>Angular is best framework which provide good testing ability 
+=>As you create component it provide one spec.ts file which can be used in unit testing
