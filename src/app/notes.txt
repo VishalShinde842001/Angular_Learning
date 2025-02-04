@@ -166,3 +166,8 @@ It runs after Angular has checked the component's view and its child views.
 If there are changes in the view (e.g., updates to ViewChild or ViewChildren), this hook will be triggered.
 
 Key Point: This hook runs frequently, after every change detection cycle involving the view.
+=============================================================================================================
+=============================================================================================================
+
+Basic understanding of HostBinding
+1)

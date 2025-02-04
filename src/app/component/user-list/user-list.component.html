@@ -1,0 +1,49 @@
+<table>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Age
+        </th>
+        <th>
+            Salary
+        </th>
+        <th>
+            Show
+        </th>
+    </tr>
+
+    <tr *ngFor="let user of userList">
+        <td>
+            {{user.userId}}
+        </td>
+        <td>
+            {{user.userName}}
+        </td>
+        <td>
+            {{user.userAge}}
+        </td>
+        <td>
+            {{user.userSalary}}
+        </td>
+        <td (click)="showUserDetails(user)">
+            +
+        </td>
+    </tr>
+
+</table>
+
+<form (ngSubmit)="addUser()">
+    <input type="number" name="userId" [(ngModel)]="userToAdd.userId" />
+    <input type="text" name="userName" [(ngModel)]="userToAdd.userName" />
+    <input type="number" name="userAge" [(ngModel)]="userToAdd.userAge" />
+    <input type="number" name="userSalary" [(ngModel)]="userToAdd.userSalary" />
+    <input type="submit" />
+</form>
+
+
+<user-details></user-details>

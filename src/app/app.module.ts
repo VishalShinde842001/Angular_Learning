@@ -15,10 +15,13 @@ import { HookChildComponent } from './component/life-cycle-hooks/all-hooks/child
 import { ContentProjectionDemoChild } from './component/life-cycle-hooks/content-project-demo/content-projecion-demo-child/content-projectchild.component';
 import { ContentProjectionDemoComponent } from './component/life-cycle-hooks/content-project-demo/content-projection.component';
 import { HighlightDirective } from './directives/HighlightDirective/HighlightDirective';
+import { UserListComponent } from './component/user-list/user-list.component';
+import { UserDetailsComponent } from './component/user-details/user-details.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 @NgModule({
-  declarations: [HighlightDirective,
-    AppComponent, SearchComponent, ProductListComponent, ContainerComponent, InputFieldDirective, ViewChildrenDemo, ConstructorDemoComponent, AllHooksComponent, HookChildComponent,ContentProjectionDemoChild,ContentProjectionDemoComponent
+  declarations: [HighlightDirective,NotFoundComponent,
+    AppComponent, SearchComponent, ProductListComponent, ContainerComponent, InputFieldDirective, ViewChildrenDemo, ConstructorDemoComponent, AllHooksComponent, HookChildComponent,ContentProjectionDemoChild,ContentProjectionDemoComponent,UserListComponent,UserDetailsComponent
   ],
   imports: [
     BrowserModule,
